@@ -1,0 +1,21 @@
+<h1>Edit this bear!</h1>
+<p>Modify it's name, description, width, and height. Dimensions should be between 100 and 300 inclusive for safe measure.</p>
+
+<%= form_for @bear do |f| %>
+  <%= f.label :name %>:
+  <%= f.text_field :name %>
+
+  <%= f.label :description %>:
+  <%= f.text_field :description %>
+
+  <%= f.label :width %>:
+  <%= f.text_field :width %>
+
+  <%= f.label :height %>:
+  <%= f.text_field :height %>
+
+  <%= f.submit %>
+<% end %>
+<div>
+  <img src="http://placebear.com/<%= @bear.width %>/<%= @bear.height %>" alt="<%= @bear.name %>">
+</div>

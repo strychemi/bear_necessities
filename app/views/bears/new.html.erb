@@ -1,0 +1,18 @@
+<h1>Create a new bear!</h1>
+<p>Give it a name, description, a width, and a height with dimensions between 100 and 300 inclusive.</p>
+
+<%= form_for @bear do |f| %>
+  <%= f.label :name %>:
+  <%= f.text_field :name %>
+
+  <%= f.label :description %>:
+  <%= f.text_field :description %>
+
+  <%= f.label :width %>:
+  <%= f.text_field :width %>
+
+  <%= f.label :height %>:
+  <%= f.text_field :height %>
+
+  <%= f.submit %>
+<% end %>

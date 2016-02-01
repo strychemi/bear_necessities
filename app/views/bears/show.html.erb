@@ -1,0 +1,10 @@
+<h3>Say hi to <%= "#{@bear.name}!" %> </h3>
+<p><%= "#{@bear.name} has a width of #{@bear.width} and a height of #{@bear.height}!"%></p>
+<h2>Description</h2>
+<p><%= @bear.description %></p>
+<div>
+  <img src="http://placebear.com/<%= @bear.width %>/<%= @bear.height %>" alt="<%= @bear.name %>">
+</div>
+
+<%= link_to "Edit this Bear!", edit_bear_path(@bear.id) %>
+<%= link_to "Delete this Bear!", bear_path(@bear.id), method: "delete" %>

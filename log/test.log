@@ -1,0 +1,91 @@
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2016-02-01 11:01:44 -0500
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Started GET "/bears" for 127.0.0.1 at 2016-02-01 11:01:44 -0500
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Started GET "/bears/1/edit" for 127.0.0.1 at 2016-02-01 11:01:44 -0500
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Started GET "/bears/new" for 127.0.0.1 at 2016-02-01 11:01:44 -0500
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/bears/1/edit" for 127.0.0.1 at 2016-02-01 11:01:44 -0500
+  [1m[35m (0.0ms)[0m  rollback transaction
+  [1m[36m (1.5ms)[0m  [1mCREATE TABLE "bears" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "width" integer, "height" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL) [0m
+  [1m[35m (2.5ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (0.1ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (1.4ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (0.7ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160201160341')
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started GET "/" for 127.0.0.1 at 2016-02-01 11:08:48 -0500
+Processing by BearsController#index as HTML
+  Rendered bears/index.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 253ms (Views: 244.5ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started GET "/bears" for 127.0.0.1 at 2016-02-01 11:08:48 -0500
+Processing by BearsController#index as HTML
+  Rendered bears/index.html.erb within layouts/application (0.1ms)
+Completed 200 OK in 3ms (Views: 2.0ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started GET "/bears/1/edit" for 127.0.0.1 at 2016-02-01 11:08:48 -0500
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Started GET "/bears/new" for 127.0.0.1 at 2016-02-01 11:08:48 -0500
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started GET "/bears/1/edit" for 127.0.0.1 at 2016-02-01 11:08:48 -0500
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36m (1.5ms)[0m  [1mCREATE TABLE "bears" ("id" INTEGER PRIMARY KEY AUTOINCREMENT NOT NULL, "width" integer, "height" integer, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL, "name" varchar, "description" text) [0m
+  [1m[35m (2.4ms)[0m  CREATE TABLE "schema_migrations" ("version" varchar NOT NULL) 
+  [1m[36m (0.3ms)[0m  [1mselect sqlite_version(*)[0m
+  [1m[35m (2.3ms)[0m  CREATE UNIQUE INDEX "unique_schema_migrations" ON "schema_migrations" ("version")
+  [1m[36m (0.1ms)[0m  [1mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (2.6ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160201163506')
+  [1m[36m (2.2ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160201160341')[0m
+  [1m[35m (1.4ms)[0m  INSERT INTO "schema_migrations" (version) VALUES ('20160201161001')
+  [1m[36m (1.0ms)[0m  [1mINSERT INTO "schema_migrations" (version) VALUES ('20160201163406')[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.1ms)[0m  SELECT "schema_migrations".* FROM "schema_migrations"
+  [1m[36m (0.1ms)[0m  [1mbegin transaction[0m
+Started GET "/" for 127.0.0.1 at 2016-02-01 11:50:14 -0500
+Processing by BearsController#index as HTML
+  [1m[35mBear Load (0.2ms)[0m  SELECT "bears".* FROM "bears"
+  Rendered bears/index.html.erb within layouts/application (3.9ms)
+  Rendered shared/_navbar.html.erb (0.5ms)
+Completed 200 OK in 254ms (Views: 245.2ms | ActiveRecord: 0.3ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started GET "/bears" for 127.0.0.1 at 2016-02-01 11:50:14 -0500
+Processing by BearsController#index as HTML
+  [1m[36mBear Load (0.2ms)[0m  [1mSELECT "bears".* FROM "bears"[0m
+  Rendered bears/index.html.erb within layouts/application (0.7ms)
+  Rendered shared/_navbar.html.erb (0.1ms)
+Completed 200 OK in 3ms (Views: 2.8ms | ActiveRecord: 0.2ms)
+  [1m[35m (0.1ms)[0m  rollback transaction
+  [1m[36m (0.0ms)[0m  [1mbegin transaction[0m
+Started GET "/bears/1/edit" for 127.0.0.1 at 2016-02-01 11:50:14 -0500
+Processing by BearsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mBear Load (0.1ms)[0m  SELECT  "bears".* FROM "bears" WHERE "bears"."id" = ? LIMIT 1  [["id", 1]]
+Completed 404 Not Found in 11ms (ActiveRecord: 0.3ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.1ms)[0m  begin transaction
+Started GET "/bears/new" for 127.0.0.1 at 2016-02-01 11:50:14 -0500
+Processing by BearsController#new as HTML
+  Rendered bears/new.html.erb within layouts/application (24.6ms)
+  Rendered shared/_navbar.html.erb (0.1ms)
+Completed 200 OK in 30ms (Views: 26.9ms | ActiveRecord: 0.0ms)
+  [1m[36m (0.1ms)[0m  [1mrollback transaction[0m
+  [1m[35m (0.0ms)[0m  begin transaction
+Started GET "/bears/1/edit" for 127.0.0.1 at 2016-02-01 11:50:14 -0500
+Processing by BearsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mBear Load (0.1ms)[0m  [1mSELECT  "bears".* FROM "bears" WHERE "bears"."id" = ? LIMIT 1[0m  [["id", 1]]
+Completed 404 Not Found in 1ms (ActiveRecord: 0.1ms)
+  [1m[35m (0.1ms)[0m  rollback transaction

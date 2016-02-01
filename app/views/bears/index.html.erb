@@ -1,0 +1,26 @@
+<h1>Behold! This is the Index of all Bears!</h1>
+
+<table>
+  <tr>
+    <th>Bear ID</th>
+    <th>Bear Name</th>
+    <th>Bear Width</th>
+    <th>Bear Height</th>
+    <th>Bear Description</th>
+    <th>Bear Image</th>
+    <th>Edit Bear</th>
+    <th>Delete Bear</th>
+  </tr>
+  <% @bears.each do |bear| %>
+    <tr>
+      <td><%= bear.id %></td>
+      <td><%= bear.name %></td>
+      <td><%= bear.width %></td>
+      <td><%= bear.height %></td>
+      <td><%= bear.description %></td>
+      <td><img src="http://placebear.com/<%= bear.width %>/<%= bear.height %>" alt="<%= bear.name %>"></td>
+      <td><%= link_to "Edit this Bear!", edit_bear_path(bear.id) %></td>
+      <td><%= link_to "Delete this Bear!", bear_path(bear.id), method: "delete" %></td>
+    </tr>
+  <% end %>
+</table>
